@@ -1,0 +1,32 @@
+o::tlad::ka otkl
+
+import::use math
+
+va::rik:
+[a = 10]
+[b = 20]
+[author = mako]
+vce
+
+vot::tut::vivod:
+[Привет, ${author}! Переменная a = ${a}, а b = ${b}.]
+vce
+
+v::opros:
+[Введите название вашего нового проекта: ]
+vce
+
+z::ikl: 2
+vot::tut::vivod:
+[Цикл сработал! Проект создается...]
+vce
+vce
+
+k::a::k:
+[primer.json]
+--{stroki}
+---[апвзап]
+vce
+
+vce::ne
+vce::nakonec

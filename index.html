@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация VFC (Volume Fork Class)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #334155;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .section {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: #38bdf8;
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #f1f5f9;
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+        p, li {
+            color: #cbd5e1;
+        }
+        pre {
+            background-color: #0f172a;
+            color: #38bdf8;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            border: 1px solid #334155;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.95rem;
+        }
+        .code-inline {
+            background-color: #334155;
+            color: #f8fafc;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .step-list {
+            padding-left: 20px;
+        }
+        .step-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>VFC (Volume Fork Class)</h1>
+        <p>Официальный справочник команд и руководство по использованию языка v2.1</p>
+    </header>
+
+    <!-- Раздел 1: Установка -->
+    <div class="section">
+        <h2>1. Как установить и запустить проект</h2>
+        <ol class="step-list">
+            <li>Клонируйте репозиторий проекта: <code class="code-inline">git clone https://github.com/mako986/VFC.git</code></li>
+            <li>Создайте файл с исходным кодом и расширением <code class="code-inline">.vfc</code> (например, <code class="code-inline">main.vfc</code>).</li>
+            <li>Запустите код через терминал ОС Windows командой:</li>
+        </ol>
+        <pre><code>python vfc.py main.vfc</code></pre>
+    </div>
+
+    <!-- Раздел 2: Полный справочник команд -->
+    <div class="section">
+        <h2>2. Подробный справочник команд VFC</h2>
+
+        <h3>vot::tut::vivod:</h3>
+        <p>Команда, делающая вывод текста в консоль (поддерживает вывод переменных через <code class="code-inline">${var_name}</code>). Завершается ключевым словом <code class="code-inline">vce</code>.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>vot::tut::vivod:
+[Привет, мир! Это консоль VFC.]
+vce</code></pre>
+
+        <h3>o::tlad::ka</h3>
+        <p>Команда для отключения или включения отладки. Позволяет убрать всю лишнюю «шелуху» (системные сообщения вроде <code>[VFC System]</code> и пути созданных папок) из консоли.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>o::tlad::ka otkl   &lt;-- отключить отладку
+o::tlad::ka vkly   &lt;-- включить обратно</code></pre>
+
+        <h3>va::rik:</h3>
+        <p>Команда для объявления пользовательских переменных. Позволяет задавать значения и использовать их в тексте или путях файлов.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>va::rik:
+[a = 10]
+[author = mako]
+vce</code></pre>
+
+        <h3>v::opros:</h3>
+        <p>Команда интерактивного опроса пользователя. Выводит вопрос в консоль, ожидает ввод с клавиатуры и сохраняет результат.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>v::opros:
+[Введите имя себя: ]
+vce</code></pre>
+
+        <h3>z::ikl:</h3>
+        <p>Команда цикла. Позволяет выполнять внутренний блок команд заданное количество раз.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>z::ikl: 5
+vot::tut::vivod:
+[Повтор цикла...]
+vce
+vce</code></pre>
+
+        <h3>k::a::k:</h3>
+        <p>Умный блок логической проверки. Проверяет существование файлов, количество строк или размер.</p>
+        <p><strong>Проверка строк (например):</strong></p>
+        <pre><code>k::a::k:
+[primer.json]
+--{stroki}
+---[апвзап]
+vce</code></pre>
+        <p><strong>Проверка размера (например):</strong></p>
+        <pre><code>k::a::k:
+[primer2.json]
+--{razmer}
+---[12.2 MB]
+vce</code></pre>
+        <p><strong>Проверка существования (например):</strong></p>
+        <pre><code>k::a::k:
+[primer3nax.json]
+--{m}
+---[json in.json]
+vce</code></pre>
+
+        <h3>p::apka:</h3>
+        <p>Команда для создания папок, структуры файлов и заполнения их содержимым по строкам. Каждая новая строка файла задается в отдельном блоке <code class="code-inline">{ ... }</code>.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>p::apka:
+[folder]
+--{davai}
+---[config.json, notes.txt]
+----[my_data]
+-=[config.json]
+{"version": "1.0"}
+{"mode": "debug"}
+-=[notes.txt]
+{Первая строка заметок}
+{Вторая строка заметок}
+vce</code></pre>
+
+        <h3>import::use</h3>
+        <p>Команда подключения встроенных библиотек (<code class="code-inline">math</code>, <code class="code-inline">mathp</code>, <code class="code-inline">jam</code>) или модулей Python.</p>
+        <p><strong>Пример использования:</strong></p>
+        <pre><code>import::use math
+import::use jam</code></pre>
+
+        <h3>vce::ne</h3>
+        <p>Команда мягкой паузы (ожидание нажатия клавиши Enter).</p>
+        <pre><code>vce::ne</code></pre>
+
+        <h3>vce::nakonec</h3>
+        <p>Полное завершение работы программы.</p>
+        <pre><code>vce::nakonec</code></pre>
+
+        <h3>eto::xz</h3>
+        <p>Специальная мусорная команда-заглушка для отладки или запутывания кода.</p>
+        <pre><code>eto::xz</code></pre>
+    </div>
+
+    <!-- Раздел 3: Пример программы -->
+    <div class="section">
+        <h2>3. Пример полноценного файла (main.vfc)</h2>
+        <pre><code>o::tlad::ka otkl
+
+import::use math
+import::use jam
+
+va::rik:
+[project_name = VFC_App]
+[version = 2.1]
+vce
+
+vot::tut::vivod:
+[Запуск проекта ${project_name} версии ${version}...]
+vce
+
+z::ikl: 2
+vot::tut::vivod:
+[Создание структуры...]
+vce
+vce
+
+p::apka:
+[folder]
+--{davai}
+---[config.json, info.txt]
+----[${project_name}]
+-=[config.json]
+{"name": "${project_name}"}
+{"ver": "${version}"}
+-=[info.txt]
+{Создано с помощью языка VFC без лишней отладки}
+vce
+
+vce::ne
+vce::nakonec</code></pre>
+    </div>
+</div>
+
+</body>
+</html>
